@@ -92,11 +92,11 @@ function factorialRecursivo(n){ //Función factorial usando recursividad
             return 1;
         }
         else{
-            n * factorialRecursivo(n-1);
+            return n * factorialRecursivo(n-1);
         }
     }
     else{
         console.log("No existe factorial de un numero negativo.")
     }
 }
-factorialRecursivo(5);
+console.log(factorialRecursivo(6));
