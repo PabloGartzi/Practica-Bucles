@@ -48,9 +48,10 @@ function tablaMultiplicar(){
         n = parseInt(n);
         console.log(typeof(n));
     }
-    while (isNaN(n));
+    while (isNaN(n)); //  (typeof numero !== "number" || isNan(n))
     for (let i= 0; i <= 10; i++){
         console.log(n+" x "+i+" = "+n*i); //CUIDADO: Si se tratara de sumar esto no funcionaria
+        console.log(`${n} x ${i} = ${n*i} `); // Otra forma
     }
 }
 tablaMultiplicar();
@@ -68,6 +69,7 @@ regresiva();
 function factorial(){
     let fact = 1;
     let n;
+    let cadena = "";
     do{
         n = prompt("Introduce un número: ");
         n = parseInt(n);
@@ -75,8 +77,12 @@ function factorial(){
     while (isNaN(n) || n < 0);
     for (let i= 1; i <= n; i++){
         fact *= i
-    }
-    console.log(fact);
+        cadena +=` ${i} `;
+        if (i < n){
+            cadena += "x"
+        }
+    }    
+    console.log(`${n}! = ${cadena}= ${fact}`);
 }
 factorial();
 
